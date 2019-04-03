@@ -1,18 +1,31 @@
+function factorial(number){
+  for(var i=number; i>1; i-=1){
+    // console.log(i, number)
+    number *= (i-1);
+  }
+  return number
+}
+// console.log(factorial(3) === 6)
+// console.log(factorial(5) === 120)
+// console.log(factorial(10) === 3628800)
+
 $(document).ready(function(){
   $("form").submit(function(event){
-  var userInput = parseInt($("#number").val());
-  var total = 0;
-  console.log(typeof userInput);
-  for(var i=userInput; i>=1; i-=1){
-  total += (i * (i -1));
-  alert(total);
-
-}
-  event.preventDefault();
+    var number = parseInt($("#number").val());
+    $("#answer").val(factorial(number));
+    event.preventDefault();
   });
 });
 
 
-// var iceCreamFlavors = ["mango","vanilla","berries"];
-//  for (var index = 0; index < iceCreamFlavors.length; index += 1) {
-//    document.write(iceCreamFlavors[index] + "<br>");
+// $(document).ready(function(){
+//   $("form").submit(function(event){
+//     var userInput = parseInt($("#number").val());
+//     console.log(typeof userInput);
+//     for(var i=userInput; i>1; i-=1){
+//       userInput *= (i-1);
+//     }
+//     alert(userInput);
+//     event.preventDefault();
+//   });
+// });
